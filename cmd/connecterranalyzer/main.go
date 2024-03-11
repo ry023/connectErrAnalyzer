@@ -1,7 +1,7 @@
 package main
 
 import (
-	"connecterranalyzer"
+	"github.com/ry023/connecterranalyzer"
 
 	"golang.org/x/tools/go/analysis/unitchecker"
 )
