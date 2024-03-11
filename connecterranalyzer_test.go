@@ -1,9 +1,9 @@
-package connectErrAnalyzer_test
+package connecterranalyzer_test
 
 import (
 	"testing"
 
-	"connectErrAnalyzer"
+	"connecterranalyzer"
 
 	"github.com/gostaticanalysis/testutil"
 	"golang.org/x/tools/go/analysis/analysistest"
@@ -12,5 +12,5 @@ import (
 // TestAnalyzer is a test for Analyzer.
 func TestAnalyzer(t *testing.T) {
 	testdata := testutil.WithModules(t, analysistest.TestData(), nil)
-	analysistest.Run(t, testdata, connectErrAnalyzer.Analyzer, "a")
+	analysistest.Run(t, testdata, connecterranalyzer.Analyzer, "a")
 }

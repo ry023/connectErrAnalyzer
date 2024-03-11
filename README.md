@@ -1,4 +1,4 @@
-# connectErrAnalyzer
+# connecterranalyzer
 
 connectErrAnalyse is Go static analyzer for development with [connect-go](https://github.com/connectrpc/connect-go).
 
@@ -17,5 +17,5 @@ return nil, connect.NewError(connect.CodeInternal, err)
 Diagnostics can be performed by specifying this analyser binary as `-vettool` when `go vet`.
 
 ```
-go vet -vettool=connectErrAnalyzer ./...
+go vet -vettool=connecterranalyzer ./...
 ```
