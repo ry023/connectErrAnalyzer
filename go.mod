@@ -1,4 +1,4 @@
-module connectErrAnalyzer
+module github.com/ry023/connectErrAnalyzer
 
 go 1.22
 
