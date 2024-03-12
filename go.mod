@@ -1,4 +1,4 @@
-module github.com/ry023/connecterranalyzer
+module github.com/ry023/connecterr
 
 go 1.22
 

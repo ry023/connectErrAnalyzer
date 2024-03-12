@@ -1,4 +1,4 @@
-package connecterranalyzer
+package connecterr
 
 import (
 	"go/ast"
@@ -9,11 +9,11 @@ import (
 	"golang.org/x/tools/go/ast/inspector"
 )
 
-const doc = "connecterranalyzer is ..."
+const doc = "connecterr is ..."
 
 // Analyzer is ...
 var Analyzer = &analysis.Analyzer{
-	Name: "connecterranalyzer",
+	Name: "connecterr",
 	Doc:  doc,
 	Run:  run,
 	Requires: []*analysis.Analyzer{
