@@ -17,7 +17,7 @@ return nil, connect.NewError(connect.CodeInternal, err)
 It can be installed with the `go install` command.
 
 ```
-go install github.com/ry023/connecterr/cmd/connecterr@v0.1.0
+go install github.com/ry023/connecterr/cmd/connecterr@v0.1.1
 ```
 
 Diagnostics can be performed by specifying this analyser binary as `-vettool` when `go vet`.
