@@ -1,6 +1,6 @@
 # connecterr
 
-connectErrAnalyse is Go static analyzer for development with [connect-go](https://github.com/connectrpc/connect-go).
+*connecterr* is Go static analyzer for development with [connect-go](https://github.com/connectrpc/connect-go).
 
 This analyser warns when an error is returned without being wrapped in connect.NewError.
 
@@ -12,10 +12,16 @@ return nil, err
 return nil, connect.NewError(connect.CodeInternal, err)
 ```
 
-## How To Use
+## Install / How To Use
+
+It can be installed with the `go install` command.
+
+```
+go install github.com/ry023/connecterr/cmd/connecterr@v0.1.0
+```
 
 Diagnostics can be performed by specifying this analyser binary as `-vettool` when `go vet`.
 
 ```
-go vet -vettool=connecterr ./...
+go vet -vettool=$(which connecterr) ./...
 ```
