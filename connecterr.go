@@ -36,9 +36,11 @@ func run(pass *analysis.Pass) (any, error) {
 	for _, m := range methods {
 		ast.Inspect(m, func(n ast.Node) bool {
 			if stmt, ok := n.(*ast.ReturnStmt); ok {
-				errResult := stmt.Results[1]
-				if !isConnectErrorWrap(pass, errResult) {
-					pass.Reportf(errResult.Pos(), "error must be wrap by connect.NewError method")
+				if len(stmt.Results) >= 2 {
+					errResult := stmt.Results[1]
+					if !isConnectErrorWrap(pass, errResult) {
+						pass.Reportf(errResult.Pos(), "error must be wrap by connect.NewError method")
+					}
 				}
 			}
 			return true
@@ -49,6 +51,9 @@ func run(pass *analysis.Pass) (any, error) {
 }
 
 func isConnectMethod(pass *analysis.Pass, n *ast.FuncDecl) bool {
+	if n.Type.Results == nil {
+		return false
+	}
 	resultList := n.Type.Results.List
 
 	// num of returning var must be 2
