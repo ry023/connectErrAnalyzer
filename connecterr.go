@@ -21,6 +21,11 @@ var Analyzer = &analysis.Analyzer{
 	},
 }
 
+// For golangci-lint Plugin
+func New(conf any) ([]*analysis.Analyzer, error) {
+	return []*analysis.Analyzer{Analyzer}, nil
+}
+
 func run(pass *analysis.Pass) (any, error) {
 	inspect := pass.ResultOf[inspect.Analyzer].(*inspector.Inspector)
 
