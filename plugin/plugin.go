@@ -7,7 +7,7 @@ import (
 )
 
 func init() {
-	register.Plugin("example", New)
+	register.Plugin("connecterr", New)
 }
 
 func New(settings any) (register.LinterPlugin, error) {
